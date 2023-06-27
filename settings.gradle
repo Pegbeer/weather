@@ -1,2 +1,5 @@
 rootProject.name = "Expresate"
 include ':app'
+include ':usecases'
+include ':domain'
+include ':infrastructure'

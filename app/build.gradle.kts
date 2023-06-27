@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "me.pegbeer.expresate"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -50,6 +50,10 @@ android {
 }
 
 dependencies {
+
+    implementation(project(":domain"))
+    implementation(project(":usecases"))
+    implementation(project(":infrastructure"))
 
     // kotlin
     implementation(libs.jetbrains.kotlinx.coroutines.core)
