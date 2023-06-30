@@ -18,37 +18,13 @@ import me.pegbeer.expresate.databinding.ActivityMainBinding
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel by viewModels<MainViewModel>()
-
     private val binding:ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    override fun onStart() {
-        super.onStart()
-        viewModel.loadCities()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        initViews()
     }
 
-    private fun initViews() {
-        binding.locationsInput.editText!!.doOnTextChanged{ text,_,_,_ ->
-            viewModel.cityQuery.postValue(text.toString())
-        }
 
-        binding.locationsInput.addOnEditTextAttachedListener {
-
-        }
-
-        lifecycleScope.launch(Dispatchers.IO) {
-            viewModel.getCities().collect{
-                val items = it.map { it.name }.toTypedArray()
-                withContext(Dispatchers.Main){
-                    (binding.locationsInput.editText as? MaterialAutoCompleteTextView)?.setSimpleItems(items)
-                }
-            }
-        }
-    }
 }

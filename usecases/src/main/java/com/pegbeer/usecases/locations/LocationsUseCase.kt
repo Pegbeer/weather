@@ -1,15 +1,12 @@
-package com.pegbeer.usecases.cities
+package com.pegbeer.usecases.locations
 
+import com.pegbeer.domain.model.Location
 import com.pegbeer.domain.repository.IWeatherRepository
 import kotlinx.coroutines.flow.Flow
 
-class CitiesUseCases(private val repository: IWeatherRepository) : ICitiesUseCases {
+class LocationsUseCase(private val repository: IWeatherRepository) : ILocationsUseCase {
 
-    override suspend fun save() {
-        repository.loadCities()
-    }
-
-    override suspend fun getCities(query: String): Flow<List<City>> {
+    override suspend fun getLocations(query: String): Flow<List<Location>> {
         return repository.getLocations(query)
     }
 }

@@ -1,6 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/locationDisplayLy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/cityWeatherTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="London,"
+            android:text="--"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/countryWeatherTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="United Kingdom"
+            android:text="--"
+            android:textColor="?attr/colorControlNormal"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/weatherIconIv"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:src="@drawable/outline_crop_original_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locationDisplayLy"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/temperatureTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="23°"
+        android:text="--°"
+        android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weatherIconIv" />
+
+    <TextView
+        android:id="@+id/stateWeatherTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Cloudy"
+        android:text="--"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTv"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/humidityLy"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stateWeatherTv">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.66"/>
+
+
+        <me.pegbeer.expresate.ui.views.TextIconView
+            android:id="@+id/windTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="--"
+            android:layout_gravity="center"
+            app:icon="@drawable/outline_crop_original_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineHumidity"/>
+
+
+
+        <me.pegbeer.expresate.ui.views.TextIconView
+            android:id="@+id/rainPercentTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="--"
+            app:icon="@drawable/outline_crop_original_24"
+            app:layout_constraintStart_toEndOf="@id/guidelineHumidity"
+            app:layout_constraintEnd_toStartOf="@id/guidelineRain"/>
+
+        <me.pegbeer.expresate.ui.views.TextIconView
+            android:id="@+id/sunriseTv"
+            android:layout_column="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            tools:text="--"
+            app:icon="@drawable/outline_crop_original_24"
+            app:layout_constraintStart_toEndOf="@id/guidelineRain"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
-package com.pegbeer.usecases.cities
+package com.pegbeer.usecases.locations
 
+import com.pegbeer.domain.model.Location
 import kotlinx.coroutines.flow.Flow
 
-interface ICitiesUseCases {
-    suspend fun save()
-    suspend fun getCities(query:String): Flow<List<City>>
+interface ILocationsUseCase {
+    suspend fun getLocations(query:String): Flow<List<Location>>
 }

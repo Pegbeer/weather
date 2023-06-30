@@ -7,6 +7,7 @@ androidx-constraintlayout = "2.1.4"
 androidx-core = "1.10.1"
 androidx-fragment = "1.5.7"
 androidx-hilt = "1.0.0"
+androidx-navigation = "2.6.0"
 androidx-lifecycle = "2.6.1"
 androidx-recyclerview = "1.3.0"
 androidx-room = "2.5.1"
@@ -21,6 +22,7 @@ google-ksp = "1.8.21-1.0.11"
 google-material = "1.9.0"
 jetbrains-kotlin = "1.8.21"
 jetbrains-kotlinx-coroutines = "1.7.0"
+jetbrains-kotlinx-serialization = "1.5.0"
 junit = "4.13.2"
 retrofit = "2.9.0"
 mockito-core = "4.2.0"
@@ -33,6 +35,8 @@ android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref 
 
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx-navigation" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
@@ -61,6 +65,7 @@ google-dagger-hilt-gradlePlugin = { module = "com.google.dagger:hilt-android-gra
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 
 jetbrains-kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version = "1.8.10" }
+jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "jetbrains-kotlinx-serialization" }
 jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "jetbrains-kotlinx-coroutines" }
 jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "jetbrains-kotlinx-coroutines" }
 

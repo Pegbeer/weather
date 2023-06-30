@@ -9,10 +9,10 @@ import com.pegbeer.infrastructure.AppRepository
 import com.pegbeer.infrastructure.database.RoomRepository
 import com.pegbeer.infrastructure.network.IApiService
 import com.pegbeer.infrastructure.network.RetrofitRepository
-import com.pegbeer.usecases.cities.ISaveCitiesUseCase
-import com.pegbeer.usecases.cities.CitiesUseCases
-import com.pegbeer.usecases.weather.GetWeatherUseCase
-import com.pegbeer.usecases.weather.IGetWeatherUseCase
+import com.pegbeer.usecases.locations.ILocationsUseCase
+import com.pegbeer.usecases.locations.LocationsUseCase
+import com.pegbeer.usecases.weather.WeatherUseCase
+import com.pegbeer.usecases.weather.IWeatherUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,7 +30,7 @@ object AppModule {
     @Provides
     fun provideRetrofit():IApiService{
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.openweathermap.org/data/2.5/")
+            .baseUrl("https://api.weatherapi.com/v1/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         return retrofit.create(IApiService::class.java)
@@ -66,14 +66,14 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideSaveCitiesUseCase(weatherRepository: IWeatherRepository):ISaveCitiesUseCase{
-        return CitiesUseCases(weatherRepository)
+    fun provideSaveCitiesUseCase(weatherRepository: IWeatherRepository):ILocationsUseCase{
+        return LocationsUseCase(weatherRepository)
     }
 
     @Singleton
     @Provides
-    fun provideGetWeatherUseCase(weatherRepository: IWeatherRepository):IGetWeatherUseCase{
-        return GetWeatherUseCase(weatherRepository)
+    fun provideGetWeatherUseCase(weatherRepository: IWeatherRepository):IWeatherUseCase{
+        return WeatherUseCase(weatherRepository)
     }
 
 

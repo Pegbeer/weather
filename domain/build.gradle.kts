@@ -2,6 +2,7 @@ plugins {
     `android-library`
     `kotlin-kapt`
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization").version("1.8.10")
 }
 
 android {
@@ -37,6 +38,7 @@ android {
 dependencies {
 
     implementation(libs.jetbrains.kotlinx.coroutines.core)
+    implementation(libs.jetbrains.kotlinx.serialization.json)
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)

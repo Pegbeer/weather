@@ -1,3 +1,5 @@
 package com.pegbeer.domain.model
 
-data class ForecastPayload()
+data class ForecastPayload(
+    val forecastDay: List<Forecast>
+)
